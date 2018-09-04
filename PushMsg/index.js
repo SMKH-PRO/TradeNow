@@ -303,7 +303,7 @@ firebase.database().ref(`USERDETAILS/`).on('child_added',function(users){
 else{
     //USER IS NOT ADMIN
     
-    document.getElementById("bodyy").innerHTML =`<img src="/accessdenied.jpg" class="NotAdmin" >`
+    document.getElementById("bodyy").innerHTML =`<img src="accessdenied.jpg" class="NotAdmin" >`
     
     document.getElementById("TheBody").style="background: url(body.jpg) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;  text-align: -webkit-center" 
 }
