@@ -1,0 +1,228 @@
+#toast {
+    visibility: hidden;
+    max-width: 50px;
+    height: 50px;
+    /*margin-left: -125px;*/
+    margin: auto;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+
+    position: fixed;
+    z-index: 1;
+    left: 0;right:0;
+    bottom: 30px;
+    font-size: 17px;
+    white-space: nowrap;
+}
+
+
+#toast #img{
+	width: 50px;
+	height: 50px;
+    
+    float: left;
+    
+  
+    
+    box-sizing: border-box;
+
+    
+    background-color: #111;
+    color: #fff;
+}
+#toast #desc{
+
+    
+    color: #fff;
+   
+  padding: 10px;
+text-align: left;
+
+    overflow: hidden;
+	white-space: nowrap;
+}
+
+
+
+.toast-img{ margin-top:4px; 
+width:40px ;
+  height:40px;
+  
+}
+
+#toast.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, expand 0.5s 0.5s,stay 3s 1s, shrink 0.5s 2s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, expand 0.5s 0.5s,stay 3s 1s, shrink 0.5s 4s, fadeout 0.5s 4.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes expand {
+    from {min-width: 50px} 
+    to {min-width: 350px}
+}
+
+@keyframes expand {
+    from {min-width: 50px}
+    to {min-width: 350px}
+}
+@-webkit-keyframes stay {
+    from {min-width: 350px} 
+    to {min-width: 350px}
+}
+
+@keyframes stay {
+    from {min-width: 350px}
+    to {min-width: 350px}
+}
+@-webkit-keyframes shrink {
+    from {min-width: 350px;} 
+    to {min-width: 50px;}
+}
+
+@keyframes shrink {
+    from {min-width: 350px;} 
+    to {min-width: 50px;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;} 
+    to {bottom: 60px; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 60px; opacity: 0;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Toast*/
+
+.notifmsg{word-break: break-word;}
+  .avatarimg{width:50px; height:50px; border-radius:50%}
+
+.toast {
+    filter:drop-shadow(0px 0px 5px black);
+  position: relative;
+  width: 480px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.toast > .box {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  color: #fff;
+  background: #090f29;
+  line-height: 1.5;
+}
+.toast > .box > .avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #d9e3ed;
+  margin-right: 16px;
+  flex-shrink: 0;
+}
+.toast > .box > .info {
+  margin-right: 16px;
+  margin-left:11px;
+}
+.toast > .box > .actions {
+  flex-shrink: 0;
+  display: flex;
+  margin-left: auto;
+}
+.toast > .box > .actions > .button:first-child {
+  margin-right: 8px;
+}
+
+
+
+
+
+.button {
+  display: inline-block;
+  height: 24px;
+  color: #fff;
+  line-height: 23px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 12px;
+  font-family: "Proxima Nova", "Lato", San Francisco, -apple-system, BlinkMacSystemFont, ".SFSNText-Regular", Segoe UI, Ubuntu, Helvetica, sans-serif;
+  padding: 0 8px;
+  color: #6466bf;
+  background: #fff;
+  border: 1px solid #d9e3ed;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: 0;
+  transition: 200ms all ease;
+}
+
+.button:not(:disabled):hover {
+  box-shadow: 0 0 0 2px #e9f3ff;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/*Toast Ends*/
+
+
+
+
+.NotAdmin{
+    margin-top:5%;
+width:580px;
+}
+
+
+
+
+
+@media only screen and (max-width: 600px) {
+   
+
+.NotAdmin{
+    
+    
+    width:100%;
+}
+
+}
