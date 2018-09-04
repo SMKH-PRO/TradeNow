@@ -47,7 +47,7 @@ function showofflinead(time,adname,description,category,ownerid,price,model,year
     connectedRef.on("value", function(snap) {
         if (snap.val() === true) {
             if(window.location.pathname == "/WishList.html"){
-                      $('#OfflineChatNowBtn').attr('onclick',`location.href='/CHAT/#${ownerid}'`)
+                      $('#OfflineChatNowBtn').attr('onclick',`location.href='CHAT/#${ownerid}'`)
             }
             else{
           $('#OfflineChatNowBtn').attr('onclick',`shownotif('Opss! ','Chat is only available when you are logged in!, Please Login.. ','warning','5'); closethisad2(); setTimeout(function(){$('#modalLRForm').modal('show');},500)`)
