@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="icon" href="favii.png"  type="image/png">
+
+
+
+
+<!--Scripts Needed To Load First-->
+<script>var userip;</script>
+    <script type="text/javascript" src="https://l2.io/ip.js?var=userip"></script>
+    
+<script src='/js/jquery.js'></script>
+<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-app.js"></script>
+<link rel='stylesheet ' href='/css/fa.css'>
+<link rel="stylesheet" href="css/index.css">
+<script  src="/js/time.js"></script>
+<script src="/js/Popper.js"></script>
+<script src="/js/bootstrap.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-messaging.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-functions.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+<script src="/js/firebaseintialize.js"></script>
+
+<script src="/js/notifications.js"></script>
+
+<script src="/js/shownotifications.js"></script>
+
+<script src="/js/userinfo.js"></script>
+
+
+    <script src="/js/localforage.js"></script>
+<!--ScriptsNeeded to Load First Ends Above-->
+
+
+
+
+
+
+<!--Some JS AND CSS FILES-->
+
+
+
+     <link rel="stylesheet" href="/css/search.css">
+           <script src="upload/upload.js"></script>
+           <link rel="stylesheet" href="/upload/upload.css">
+
+        <script type="text/javascript" src="https://l2.io/ip.js?var=userip"></script>
+   
+
+        <!--BOOTSTRAP-->
+        <link rel="stylesheet" href="css/bootstrap.css" >
+<link rel="stylesheet" href="css/mdbs.css">
+
+
+
+<!-- Latest compiled JavaScript -->
+
+
+<link rel="stylesheet" href="/css/animate.css">
+<!--Some JS And CSS Files Ends Above-->
+
+
+
+
+
+
+
+    <title> Bikes - TradeNowPakistan</title>
+</head>
+<body id="dom-body">
+
+
+
+
+
+
+
+
+
+
+
+
+      
+      
+      
+
+
+
+    
+    
+    
+
+
+
+
+
+    <div id="theparentofalldom">
+  
+   <!--NavBar Starts--> 
+   <header>
+<h1  class="animated flipInX text-center bungee header-text"><text class="header-text-1">Trade Now </text> <text class="header-text-2">Pakistan</text></h1>  
+
+<div  id="mynavbar" >
+   <nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color lighten-1">
+       
+        <a class="navbar-brand" href="#"> <img  class="img navbar-logo animated zoomIn" src="logo.png"></a>
+       
+        <a href="#"  class="search-btn searchbtnposition"><i class="fa fa-search"></i></a>
+
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-5" aria-controls="navbarSupportedContent-5" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent-5">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item ">
+                    <a class="nav-link waves-effect waves-light" href="/">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link waves-effect waves-light" href="/publish.html">Publish your ads </a>
+                </li>
+               
+                <li class="nav-item dropdown active">
+                    <a class="active nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink-5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ads Category
+                    </a>
+                    <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-5">
+                        <a class="dropdown-item waves-effect waves-light " href="laptop.html">Laptops</a>
+                        <a class="dropdown-item waves-effect waves-light" href="mobile.html">Mobiles</a>
+                        <a class="dropdown-item waves-effect waves-light active" href="bike.html">Bike</a>
+                        <a class="dropdown-item waves-effect waves-light" href="car.html">Cars</a>
+                        <a class="dropdown-item waves-effect waves-light" href="other.html">Other</a>
+                        <a class="dropdown-item waves-effect waves-light" href="Ads.html">All Ads</a>
+                    </div>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link waves-effect waves-light UserMyOwnAds" href="">Your Ads </a>
+                </li>
+                
+
+            </ul>
+
+            <ul id="nav-userdata" data-toggle="collapse" data-target="#navbarDropdownMenuLink" aria-expanded="false" aria-controls="navbarDropdownMenuLink" class="animated lightSpeedIn pointer navbar-nav ml-auto nav-flex-icons">
+              <li id="navbar-name" class="navbar-name animated fadeIn">name</li>
+                <li class="nav-item avatar dropdown">
+                    
+                    <a class="userimgparent nav-link dropdown-toggle waves-effect waves-light"  data-toggle="collapse" href="#navbarDropdownMenuLink" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <img src="defaultuser.png" id="navbaruserimgavatar" class="rounded-circle z-depth-0 navbar-userimg animated flipInX" alt="Profile">
+                    </a>
+                    <div class="dropdown-menu collapse dropdown-menu-right dropdown-default" id="navbarDropdownMenuLink">
+                        <a class="dropdown-item waves-effect waves-light" id="changepicbtn"  href="#">Change Photo</a>
+                        <a class="dropdown-item waves-effect waves-light" id="MyWishList"  href="/WishList.html">WishList &nbsp; <i class="wishlist fa fa-heart"></i></a>
+                        <a class="dropdown-item waves-effect waves-light" href="/CHAT/">Conversations</a>
+                        <a class="dropdown-item waves-effect waves-light" href="MyAds.html">My Ads</a>
+                        <hr>
+                        <a class="dropdown-item waves-effect waves-light" id="LogOutBtn" href="#">Log Out <i class="fa fa-power-off"></i></a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        
+
+    </nav>
+    <i class="fa fa-sign-in loginbtn btn-warning btn" id="loginbtn" onclick= "$('#modalLRForm').modal('show')" aria-hidden="true"></i>
+</div>
+</header>
+<div id="spacer" class="spacer"></div>
+<!--NavBar Ends Above-->
+<br><br>
+
+
+<!--Main BODY STARTS-->
+<h1 class="text-center Amaranth">Buy Bikes</h1>
+
+
+<div id="LoadingAds" style="animation-duration:5000ms"><center><img src="loading.gif" style="width:50px;height:50px;" class="animated zoomIn img img-rounded"></center> </div>
+<div id="mainbody" class="Amaranth container">
+
+<div id="OfflineAds"></div> 
+
+<div id="FakeAd">
+
+    
+<!-- Card --> <div class="card mainbodycard animated fadeIn" > <div class="view overlay cardimg"  > <img  class="card-img-top cardimg" src="fakebike1.jpg" alt="Card image cap"> <a> <div class="mask rgba-white-slight"></div> </a> </div> <a class="btn-floating btn-action ml-auto mr-4 mdb-color lighten-3"><i style="font-size: 35px;
+    margin-left: -2px !important;"  class="fa fa-eye pl-1"></i></a> <div class="card-body"> <h4 class="card-title">Sports Bike </h4> <hr> <p class="card-text"> Dell Power with advance technology and the latest requirement and specs;........ </p><p class="cardviewPrice" > Rs 14999 </p> </div> <!-- Card footer --> <div class="rounded-bottom mdb-color lighten-3 text-center pt-3"> <ul class="list-unstyled list-inline font-small"> <li class="list-inline-item pr-2 white-text"><i class="fa fa-clock-o pr-1"></i>  4:31 PM, 1 July 2018 </li> </ul> </div> </div> 
+    
+    <!-- Card --><!-- Card --> <div class="card  mainbodycard animated fadeIn" > <div class="view overlay cardimg"  > <img  class="card-img-top cardimg" src="fakebike2.jpg" alt="Card image cap"> <a> <div class="mask rgba-white-slight"></div> </a> </div> <a class="btn-floating btn-action ml-auto mr-4 mdb-color lighten-3"><i style="font-size: 35px;
+        margin-left: -2px !important;"   class="fa fa-eye pl-1"></i></a> <div class="card-body"> <h4 class="card-title">Yamaha Bike</h4> <hr> <p class="card-text"> The Best and the most powerfull detachable bike......... </p><p class="cardviewPrice" > Rs 14999 </p> </div> <!-- Card footer --> <div class="rounded-bottom mdb-color lighten-3 text-center pt-3"> <ul class="list-unstyled list-inline font-small"> <li class="list-inline-item pr-2 white-text"><i class="fa fa-clock-o pr-1"></i>  4:53 PM, 1 July 2018 </li> </ul> </div> </div> 
+        <!-- Card --><!-- Card --> <div class="card mainbodycard animated fadeIn" > <div class="view overlay cardimg"  > <img  class="card-img-top cardimg" src="fakebike3.jpg" alt="Card image cap"> <a> <div class="mask rgba-white-slight"></div> </a> </div> <a class="btn-floating btn-action ml-auto mr-4 mdb-color lighten-3"><i style="font-size: 35px;
+        margin-left: -2px !important;"  class="fa fa-eye pl-1"></i></a> <div class="card-body"> <h4 class="card-title">Honda Bike</h4> <hr> <p class="card-text"> Dell Inspion 5583 the best bike for software engineers........ </p> <p class="cardviewPrice" > Rs 14999 </p></div> <!-- Card footer --> <div class="rounded-bottom mdb-color lighten-3 text-center pt-3"> <ul class="list-unstyled list-inline font-small"> <li class="list-inline-item pr-2 white-text"><i class="fa fa-clock-o pr-1"></i>  9:25 PM, 4 July 2018 </li> </ul> </div> </div> <!-- Card -->
+</div>
+
+
+</div><!--Container Ends-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--Main Body Ends-->
+
+
+<!-- Footer -->
+<footer class="page-footer font-small unique-color-dark mt-4">
+
+        <div  class="default-color">
+          <div class="container">
+    
+            <!-- Grid row-->
+            <div class="row py-4 d-flex align-items-center">
+    
+              <!-- Grid column -->
+              <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+                <h6 class="mb-0">Get connected with us on social networks!</h6>
+              </div>
+              <!-- Grid column -->
+    
+              <!-- Grid column -->
+              <div class="col-md-6 col-lg-7 text-center text-md-right">
+    
+                <!-- Facebook -->
+                <a class="fb-ic">
+                  <i onclick= "alert('Not Yet Available!')" class="fa fa-facebook white-text mr-4"> </i>
+                </a>
+                <!-- Twitter -->
+                <a class="tw-ic">
+                  <i  onclick= "alert('Not Yet Available!')" class="fa fa-twitter white-text mr-4"> </i>
+                </a>
+                <!-- Google +-->
+                <a class="gplus-ic">
+                  <i onclick= "alert('Not Yet Available!')" class="fa fa-google-plus white-text mr-4"> </i>
+                </a>
+                <!--Linkedin -->
+                <a class="li-ic">
+                  <i onclick= "alert('Not Yet Available!')" class="fa fa-linkedin white-text mr-4"> </i>
+                </a>
+                <!--Instagram-->
+                <a class="ins-ic">
+                  <i  onclick= "alert('Not Yet Available!')" class="fa fa-instagram white-text"> </i>
+                </a>
+    
+              </div>
+              <!-- Grid column -->
+    
+            </div>
+            <!-- Grid row-->
+    
+          </div>
+        </div>
+    
+        <!-- Footer Links -->
+        <div class="container text-center text-md-left mt-5">
+    
+          <!-- Grid row -->
+          <div class="row mt-3">
+    
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+    
+              <!-- Content -->
+              <span class="logo-footer"> <img src="logo.png" class="animated fadeIn img logo-footer-img" alt="TradeNowPakistan.com" >  </span>
+              <hr class="default-color accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 100%;">
+              <p>Pakistan's No.1 Free Trading Platform, Trade Anything Easily Without Any Cost, Post your ads now.....!</p>
+    
+            </div>
+            <!-- Grid column -->
+    
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+    
+              <!-- Links -->
+              <h6 class="text-uppercase font-weight-bold">Quick Links</h6>
+              <hr class="default-color accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+              <p>
+                <a  href="publish.html">Post Ads Now!</a>
+              </p>
+              <p>
+                <a href="/Ads.html">View Ads</a>
+              </p>
+              <p>
+                <a id="FooterInstructions" href="#!">Read Instructions</a>
+              </p>
+    
+            </div>
+            <!-- Grid column -->
+    
+            <!-- Grid column -->
+            <div class="HideWhenNotLoggedIn col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+    
+              <!-- Links -->
+              <h6 class="text-uppercase font-weight-bold">Your Account</h6>
+              <hr class="default-color accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+              <p>
+                                <a  id="MyWishList"  href="/WishList.html">WishList &nbsp; <i class="wishlist fa fa-heart"></i></a>
+
+              </p>
+              <p>
+                <a class="UserMyOwnAds" href="">Your Advertisements</a>
+              </p>
+              <p>
+                <a href="/CHAT/">Conversations</a>
+              </p>
+             
+    
+    
+            </div>
+            <!-- Grid column -->
+    
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+    
+              <!-- Links -->
+              <h6 class="text-uppercase font-weight-bold">Contact</h6>
+              <hr class="default-color accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+              <p>
+                <i class="fa fa-home mr-3"></i> Bahadurabaad, Saylani</p>
+              <p>
+                <i class="fa fa-envelope mr-3"></i> contact@TradeNowPakistan.com</p>
+              <p>
+                <i class="fa fa-phone mr-3"></i> +44 7520 605710</p>
+              
+                
+    
+            </div>
+            <!-- Grid column -->
+    
+          </div>
+          <!-- Grid row -->
+    
+        </div>
+        <!-- Footer Links -->
+    
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2018 Copyright:
+          <a href="/">TradeNowPakistan.com</a>
+        </div>
+        <!-- Copyright -->
+    
+      </footer>
+      <!-- Footer -->
+
+<!--1 Modal ends above-->
+
+    <!--Login Modal Ends-->
+
+
+    <!--Modal 3 Starts Below-->
+<div class="modal fade" id="modalmoreinfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-weight-bold">Few More Information Required.</h4>
+                
+            </div>
+            <div class="modal-body mx-3">
+                <div class="md-form mb-5">
+                    <i class="fa fa-user prefix grey-text"></i>
+                    <input type="text" id="UserFirstName"  placeholder="Your First Name" class="form-control validate">
+                </div>
+               
+                <div class="md-form mb-5">
+                  <i class="fa fa-user prefix grey-text"></i>
+                  <input type="text" id="UserLastName"  placeholder="Your Last Name" class="form-control validate">
+              </div>
+  
+  
+                <p class="text-danger">Make sure to fill correct information, The name cannot be changed later.</p>
+            </div>
+            
+            <div class="modal-footer d-flex justify-content-center">
+                <button id="senddetails-btn" class="btn btn-unique">Submit <i class="fa fa-paper-plane-o ml-1"></i></button>
+            </div>
+        </div>
+    </div>
+  </div>
+
+
+  </div>
+  
+  
+  <!--Modal 3 Ends Here-->
+
+
+
+
+
+<!-- Central Modal Medium Success -->
+<div class="modal fade" id="picprofile" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-notify modal-success" role="document">
+        <!--Content-->
+        <div class="modal-content">
+            <!--Header-->
+            <div class="modal-header">
+                <p class="heading lead">UPDATE PROFILE PICTURE</p>
+    
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    
+                </button>
+            </div>
+    
+            <!--Body-->
+            <div class="modal-body">
+                
+                
+<!--File Uplaod belo-->
+<center>
+
+<div class="text-center"><br><br><br>
+
+    <p style="font-size:10px" class="text-muted">Profile Update Requires Reload,It means this page will be reloaded after uploading the profile picture.</p>
+          
+                
+                
+                <div style="cursor:pointer !important"  class="dropzone">
+                    <div style="cursor:pointer !important" class="content">
+                        <figure class="upload" id="uploadimgtwo"><img src="upload/upload.svg" >  <figcaption style="z-index: 999; color: black;margin:3px;">Browse Or Drop</figcaption></figure>
+                        <span class="filename the2ndfilename"></span>
+                        <form id="lolinputtwo"><input style="cursor:pointer !important" id="uploadfilestwo"  type="file" class="input"></form>
+                    
+                    </div>
+                    
+                </div>
+            <input type="text" class="uploadtext animated fadeIn"  id="percentagetexttwo" value="0%"  disabled="disabled">
+                <progress class="uploadstatus animated fadeIn" id="uploadertwo" value="0" max="100"></progress>
+                
+                <img src="upload/syncing.svg" class="syncing">
+                <img src="upload/checkmark.svg" class="done">
+                
+            </div>
+          
+       
+        </center><br><br><br>
+            <!--Footer-->
+            <div class="modal-footer justify-content-center">
+                
+                <a type="button" id="uploadboxclosetwo" class="btn btn-outline-danger waves-effect" data-dismiss="modal">Cancel</a>
+            </div>
+        </div>
+        <!--/.Content-->
+    </div>
+    </div>
+    </div>
+    <!-- Central Modal Medium Success-->
+
+
+
+
+
+
+
+<!--update ad-->
+<div class="modal fade" id="updateAd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <!--Modal: Contact form-->
+        <div class="modal-dialog notify-modal modal-lg" role="document">
+    
+            <!--Content-->
+            <div class="modal-content">
+    
+                <!--Header-->
+                <div class="modal-header info-color white-text">
+                    <h4 class="title">
+                        <i class="fa fa-pencil"></i> Update Your Ad Now...</h4>
+                    
+                </div>
+                <!--Body-->
+                <div class="modal-body">
+    
+         <!--Upload AD form-->
+<center>
+              
+    <!--UploadPics-->
+    <!--Pic 1-->
+    <p class="text-muted">Must Upload 3 Pictures Of Your Product If you want to sell faster than usuall..</p>
+    <div class="md-form displayinlineblock productpicpublishparent">
+        <div class="file-field">
+            <div class="z-depth-1-half productpicpublish mb-4">
+                <img id="ProductPic1img" src="productpic.png" class="img img-responsive productpicpublish">
+            </div>
+            <div  class="d-flex justify-content-center">
+                <div id="ProductBtn1" class="btn btn-mdb-color btn-rounded float-left">
+                    <span >Change Pic</span>
+                    <input id="ProductPic1" type="file">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Pic1 Ends-->
+       <!--Pic 2-->
+              <div class="md-form productpicpublishparent displayinlineblock ">
+           <div class="file-field">
+               <div class="z-depth-1-half productpicpublish mb-4">
+                   <img id="ProductPic2img" src="productpic.png" class="img img-responsive productpicpublish">
+               </div>
+               <div  class="d-flex justify-content-center">
+                   <div id="ProductBtn2"  class="btn btn-mdb-color btn-rounded float-left">
+                       <span >Change Pic</span>
+                       <input id="ProductPic2" type="file">
+                   </div>
+               </div>
+           </div>
+       </div>
+       <!--Pic2 Ends-->
+       <!--Pic 3-->
+       <div class="md-form productpicpublishparent displayinlineblock ">
+        <div class="file-field">
+            <div class="z-depth-1-half productpicpublish mb-4">
+                <img id="ProductPic3img" src="productpic.png" class="img img-responsive productpicpublish">
+            </div>
+            <div  class="d-flex justify-content-center">
+                <div id="ProductBtn3" class="btn btn-mdb-color btn-rounded float-left">
+                    <span >Change Pic</span>
+                    <input id="ProductPic3" type="file">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Pic3 Ends-->
+    <!--ProductPics ends above-->
+</center>
+                    <!-- Material input subject -->
+                    <div class="md-form form-sm">
+                        <i class="fa fa-tag prefix"></i>
+                        <input type="text" id="ProductName" Placeholder="Product Name" class="form-control form-control-sm">
+                        
+                    </div>
+               
+
+                    <div class="md-form form-sm">
+                        <span class="prefix">Rs</span>
+                        <input type="text" id="ProductPrice"  Placeholder="Product Price" class="form-control form-control-sm">
+                        
+                    </div>
+                    <div class="md-form form-sm">
+                        <i class="prefix fa fa-calendar"></i>
+                        <input type="text" id="ProductYear" Placeholder="Year Launched/Released" class="form-control form-control-sm">
+                        
+                    </div>
+                    
+
+
+                    <div class="md-form form-sm">
+                        <i class="fa fa-cube prefix"></i>
+                        <input type="text" id="ProductModel" Placeholder="Model Of Product." class="form-control form-control-sm">
+                        
+                    </div>
+
+
+
+
+                    <!-- Material textarea message -->
+                    <div class="md-form form-sm">
+                        <i class="fa  fa-pencil prefix"></i>
+                        <textarea type="text" id="ProductDescription" placeholder="Description....." class="md-textarea form-control"></textarea>
+                        
+                    </div>
+    
+                    <div class="text-center mt-4 mb-2">
+                        <button id="updateadbtn" class="btn btn-primary">Update Ad
+                            <i class="fa fa-upload"></i> 
+                        </button>
+                    
+                    
+                            <button id="updateadclose" class="btn btn-danger">Close
+                                <i class="fa fa-times"></i> 
+                            </button>
+                        </div>
+    
+
+         <!--Upload ad form-->
+    
+                </div>
+            </div>
+            <!--/.Content-->
+        </div>
+        <!--/Modal: Contact form-->
+    </div>
+
+<!--Update ad ends above-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Modal -->
+<!--Modal: Login / Register Form-->
+<div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog cascading-modal" role="document">
+            <!--Content-->
+            <div class="modal-content">
+    
+                <!--Modal cascading tabs-->
+                <div class="modal-c-tabs">
+    
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs tabs-2 light-blue darken-3" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab"><i class="fa fa-user mr-1"></i> Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#panel8" role="tab"><i class="fa fa-user-plus mr-1"></i> Register</a>
+                        </li>
+                    </ul>
+    
+                    <!-- Tab panels -->
+                    <div class="tab-content">
+                        <!--Panel 7-->
+                        <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
+    
+                            <!--Body-->
+                            <div class="modal-body mb-1">
+                                <div class="md-form form-sm mb-5">
+                                    <i class="fa fa-envelope prefix"></i>
+                                    <input type="email" placeholder="Your Email" id="modalLRInput10" class="form-control form-control-sm validate">
+                                    
+                                </div>
+    
+                                <div class="md-form form-sm mb-4">
+                                    <i class="fa fa-lock prefix"></i>
+                                    <input type="password" id="modalLRInput11" placeholder="Your Password" class="form-control form-control-sm validate">
+                                    
+                                </div>
+                                <div class="text-center mt-2">
+                                    <button id="btn-login" class="btn btn-info">Log in <i class="fa fa-sign-in ml-1"></i></button>
+                                </div>
+                            </div>
+                            <!--Footer-->
+                            <div class="modal-footer">
+                                <div class="options text-center text-md-right mt-1">
+                                    
+                                   <!-- <p>Forgot <a href="#" class="blue-text">Password?</a></p>-->
+                                </div>
+                                
+                            </div>
+    
+                        </div>
+                        <!--/.Panel 7-->
+    
+                        <!--Panel 8-->
+                        <div class="tab-pane fade" id="panel8" role="tabpanel">
+    
+                            <!--Body-->
+                            <div class="modal-body">
+                                <div class="md-form form-sm mb-5">
+                                    <i class="fa fa-user prefix"></i>
+                                    <input type="text"   id="name" placeholder="First Name" class="form-control form-control-sm validate">
+                                    
+                                </div>
+                                <div class="md-form form-sm mb-5">
+                                    <i class="fa fa-envelope prefix"></i>
+                                    <input type="email"  placeholder="Your Email" id="modalLRInput12" class="form-control form-control-sm validate">
+                                </div>
+    
+                                <div class="md-form form-sm mb-5">
+                                    <i class="fa fa-lock prefix"></i>
+                                    <input type="password" id="modalLRInput13" placeholder="Your Password" class="form-control form-control-sm validate">
+                                    
+                                </div>
+    
+                                <div class="md-form form-sm mb-4">
+                                    <i class="fa fa-lock prefix"></i>
+                                    <input type="password" id="modalLRInput14" placeholder="Repeat Password" class="form-control form-control-sm validate">
+                                    
+                                </div>
+    
+                                <div class="text-center form-sm mt-2">
+                                    <button id="signup-btn" class="btn btn-info">Sign up <i class="fa fa-sign-in ml-1"></i></button>
+                                </div>
+    
+                            </div>
+                            <!--Footer-->
+                            <div class="modal-footer">
+                                <div class="options text-right">
+                                    
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <!--/.Panel 8-->
+                    </div>
+    
+                </div>
+            </div>
+            <!--/.Content-->
+        </div>
+    </div>
+    <!--Modal: Login / Register Form-->
+    
+    
+
+
+
+
+
+
+
+
+
+<!--SearchBox-->
+<div class="search-box search-elem">
+
+    <button  class="closesearch close btn btn-warning " ><i class="fa fa-times"></i></button>
+    <div class="inner row">
+
+      <div class="small-12 columns searchcontainer">
+          <center>
+
+
+        <label class="placeholder" for="search-field">Search</label>
+        <div class="shadowforsearch">
+        <input type="text" id="search-field">
+        <button class="submit btn btn-success"  id="searchitemsbtn"  type="submit"><i class="fa fa-search"></i></button>
+    </div>
+        </center>
+      </div>
+    </div>
+    <div id="NoDataFound"> &nbsp;</div>
+
+    <div id="searchbody">  
+
+            
+        
+
+
+    </div><!--Search Body Ends Here-->
+   </div>
+  
+  <!--Search Box Ends Above-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Modal: View Ad -->
+<div class="modal fade" id="ThisAdInfo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+                  <button type="button" id="shareadbtn" class="btn btn-warning" >
+                          <span  >   <i style=" margin-left: -3px; margin-top: -1px;font-size:25px; filter: drop-shadow(0px 0px 2px black)" class="fa fa-share-alt"></i></span>
+                      </button>
+            <div class="modal-body">
+                  <input type="text" id="adLink">
+      
+              <div class="row">
+                <div class="col-lg-5">
+      
+                  <!--Carousel Wrapper-->
+                  <div id="carousel-thumb" class="carousel slide carousel-fade carousel-thumbnails" data-ride="carousel">
+                      <!--Slides-->
+                      <div class="carousel-inner" role="listbox">
+                          <div class="carousel-item active">
+                              <img class="d-block w-100 showadproductpic" id="productpic1" src="" alt="Product Picture 1">
+                          </div>
+                          <div class="carousel-item">
+                              <img class="d-block w-100 showadproductpic"  id="productpic2" src="" alt="Product Picture 2">
+                          </div>
+                          <div class="carousel-item">
+                              <img class="d-block w-100 showadproductpic" id="productpic3" src="" alt="Product Picture 3">
+                          </div>
+                      </div>
+                      <!--/.Slides-->
+                
+                      <ol class="carousel-indicators">
+                          <li data-target="#carousel-thumb" data-slide-to="0" class="active"> <img class="d-block img-fluid"  src="productpic.png"  id="productpic1icon"></li>
+                          <li data-target="#carousel-thumb" data-slide-to="1"><img class="d-block" src="productpic.png"  id="productpic2icon" class="img-fluid"></li>
+                          <li data-target="#carousel-thumb" data-slide-to="2"><img class="d-block img-fluid" src="productpic.png"  id="productpic3icon"></li>
+                      </ol>
+                  </div>
+                  <!--/.Carousel Wrapper-->
+      
+      
+      <!-- Card Wider AD OWNER DATA -->
+      <div  style="top:-45px; position:absolute" class="card card-cascade wider">
+      
+              <!-- Card image -->
+              <div  class="imgparentofadowner view view-cascade overlay">
+                <img id="addetailsuserimg" class="card-img-top imgofadowner" src="favi.png" alt="Card image cap">
+                <a id="bigimageofthisaduser" href="#!">
+                  <div class="mask rgba-white-slight"></div>
+                </a>
+              </div>
+            
+              <!-- Card content -->
+              <div class="nameofadowner card-body card-body-cascade text-left">
+            
+                <!-- Title -->
+                <h4 class="card-title breakwords"  style="margin-top: -13px"><a id="addetailuserlink" href="" ><strong id="addetailsusername">{USERNAME}</strong></a></h4>
+                <!-- Subtitle -->
+            
+              </div>
+            
+            </div>
+            <p id="addetailtime">{{TIME OF AD}}</p>
+            <!-- Card Wider  AD OWNER DATA ENDS-->
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+                </div>
+                <div class="col-lg-7">
+                  <h2 class="h2-responsive product-name breakwords">
+                    <strong id="addetailsproductname">Product Name</strong>
+                  </h2>
+                  <h4 class="h4-responsive">
+                    <span class="breakwords green-text">
+                      <strong  > Rs   </strong>
+                    
+                      <strong id="addetailprice" >Rs 49</strong> &nbsp; <i class="fa fa-tag" ></i>
+                    </span>
+                   <!-- <span class="grey-text">
+                      <small>
+                        <s>$89</s>
+                      </small>
+                    </span>-->
+                  </h4>
+      
+                  <hr><br>
+                  <p><strong style="font-weight: 700;word-break: break-word;"><i class="fa fa-cube"></i> Model:</strong> <text id="addetailmodel"></text></p>
+                  <p><strong style="font-weight: 700;word-break: break-word;"><i class="fa fa-calendar"> </i> Year:</strong> <text id="addetailyear"></text></p>
+                  <p><strong style="font-weight: 700;word-break: break-word;"><i class="fa fa-list"> </i> Category:</strong> <text id="addetailcategory"></text></p>
+
+
+                  <!--Accordion wrapper-->
+                  <div class="accordion" id="accordion" role="tablist" aria-multiselectable="true">
+      
+            
+      
+                      <!-- Accordion card -->
+                      <div class="card">
+      
+                          <!-- Card header -->
+                          <div class="card-header" role="tab" id="headingTwo">
+                              <a class="collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                  <h5 class="mb-0">
+                                      Description <i class="fa fa-angle-down rotate-icon"></i>
+                                  </h5>
+                              </a>
+                          </div>
+      
+                          <!-- Card body -->
+                          <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion" >
+                              <div class="card-body breakwords"  id="addetailsdescription">
+                                
+    
+
+
+                              </div>
+                          </div>
+                      </div>
+                      <!-- Accordion card -->
+      
+         
+      
+                  <!-- Add to Cart -->
+                  <div class="card-body">
+                 
+                    <div class="text-center">
+      
+                          <a type="button" target="_blank" id="ChatNowBtn" class="btn btn-primary"> ChatNow &nbsp; <i style="font-size:20px;filter:drop-shadow(0px 0px 1px black)" class="fa fa-comments "></i></a>
+
+                          
+                          <a type="button" href="javascript:void(0)" id="DeleteAd" class="btn btn-danger"> Delete  &nbsp; <i style="font-size:20px;filter:drop-shadow(0px 0px 1px black); color:yellow; margin-bottom:-5px;" class="fa fa-times "></i></a>
+
+
+ <a type="button" target="_blank" id="EditAd" class="btn btn-info"> Edit  &nbsp; <i style="font-size:25px;filter:drop-shadow(0px 0px 1px black); color:yellow; margin-bottom:-5px;" class="fa fa-pencil "></i></a>
+                      
+  
+                      
+                      <button type="button" id="CloseThisAd" class="btn btn-secondary" >Close</button>
+                  
+      
+      
+                    </div>
+                  </div>
+                  <!-- /.Add to Cart -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal: View ad Ends Abvoe -->
+
+</div>
+<!--Offline AD-->
+
+
+
+
+
+
+
+
+<!-- Modal: View Ad -->
+<div class="modal fade" id="ThisOfflineAdInfo" tabindex="-1" role="dialog" aria-labelledby="ThisOfflineAdInfo" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+              <button type="button" id="shareadbtn2" class="btn btn-warning" >
+                      <span  >   <i style=" margin-left: -3px; margin-top: -1px;font-size:25px; filter: drop-shadow(0px 0px 2px black)" class="fa fa-share-alt"></i></span>
+                  </button>
+        <div class="modal-body">
+              <input type="text" id="adLink2">
+  
+          <div class="row">
+            <div class="col-lg-5">
+  
+              <!--Carousel Wrapper-->
+              <div id="carousel-thumb" class="carousel slide carousel-fade carousel-thumbnails" data-ride="carousel">
+                  <!--Slides-->
+                  <div class="carousel-inner" role="listbox">
+                      <div class="carousel-item active">
+                          <img class="d-block w-100 showadproductpic" id="productpic12" src="productpic.png" alt="Product Picture 1">
+                      </div>
+                 
+                  </div>
+               
+              </div>
+              <!--/.Carousel Wrapper-->
+  
+  
+  <!-- Card Wider AD OWNER DATA -->
+
+        <p id="addetailtime2">{{TIME OF AD}}</p>
+        <!-- Card Wider  AD OWNER DATA ENDS-->
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+            </div>
+            <div class="col-lg-7">
+              <h2 class="h2-responsive product-name breakwords">
+                <strong id="addetailsproductname2">Product Name</strong>
+              </h2>
+              <h4 class="h4-responsive">
+                <span class="breakwords green-text">
+                  <strong  > Rs   </strong>
+                
+                  <strong id="addetailprice2" >Rs 49</strong> &nbsp; <i class="fa fa-tag" ></i>
+                </span>
+               <!-- <span class="grey-text">
+                  <small>
+                    <s>$89</s>
+                  </small>
+                </span>-->
+              </h4>
+  
+              <hr><br>
+              <p><strong style="font-weight: 700;word-break: break-word;"><i class="fa fa-cube"></i> Model:</strong> <text id="addetailmodel2"></text></p>
+              <p><strong style="font-weight: 700;word-break: break-word;"><i class="fa fa-calendar"> </i> Year:</strong> <text id="addetailyear2"></text></p>
+              <p><strong style="font-weight: 700;word-break: break-word;"><i class="fa fa-list"> </i> Category:</strong> <text id="addetailcategory2"></text></p>
+
+
+              <!--Accordion wrapper-->
+              <div class="accordion" id="accordion2" role="tablist" aria-multiselectable="true">
+  
+        
+  
+                  <!-- Accordion card -->
+                  <div class="card">
+  
+                      <!-- Card header -->
+                      <div class="card-header" role="tab" id="headingTwo">
+                          <a class="collapsed" data-toggle="collapse" href="#collapseTwo2" aria-expanded="false" aria-controls="collapseTwo2">
+                              <h5 class="mb-0">
+                                  Description <i class="fa fa-angle-down rotate-icon"></i>
+                              </h5>
+                          </a>
+                      </div>
+  
+                      <!-- Card body -->
+                      <div id="collapseTwo2" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion2" >
+                          <div class="card-body breakwords"  id="addetailsdescription2">
+                            
+
+
+
+                          </div>
+                      </div>
+                  </div>
+                  <!-- Accordion card -->
+  
+     
+  
+              <!-- Add to Cart -->
+              <div class="card-body">
+             
+                <div class="text-center">
+                        <a type="button" target="_blank" id="OfflineChatNowBtn" class="btn btn-primary"> ChatNow &nbsp; <i style="font-size:18px;filter:drop-shadow(0px 0px 1px black)" class="fa fa-comments "></i></a>
+
+                
+                  <button type="button" id="CloseThisAd2" class="btn btn-secondary" >Close</button>
+              
+  
+  
+                </div>
+              </div>
+              <!-- /.Add to Cart -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal: View ad Ends Abvoe -->
+
+</div>
+
+<!--Offline Ad -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--Modal Instructions-->
+<!-- Central Modal For Instructions Starts Below -->
+<div class="modal fade" id="InstructionsForUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-notify modal-lg modal-danger" role="document">
+        <!--Content-->
+        <div class="modal-content ">
+            <!--Header-->
+            <div class="modal-header">
+                <p class="heading lead">Instructions For Users <i class="fa fa-exclamation"></i></p>
+    
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class="white-text">&times;</span>
+                </button>
+            </div>
+    
+            <!--Body-->
+            <div class="modal-body">
+                <div >
+                 
+                     <p class="text-center" style="font-weight: 700" >  There is no definite way to identify a fraudulent seller or buyer.<br>
+                    We urge you to practice good judgement and keep the following instructions in mind
+
+</p> 
+
+                    <p class="text-left">
+<strong style="font-weight: 800">For Sellers:- </strong>
+<ul>
+    <li>Try to take the full payment at the time of the delivery. Remember to use a safe location to meet.</li>
+    <li>Watch out for fake currency and money orders. Be aware that banks will not honour fake currency/money order and will hold you responsible for it.</li>
+    <li>Verify the buyer’s credentials if there is a request for a bulk order. Ask the buyer to provide photo ID and proof of address.</li>
+    <li>Ensure that your product meets the features you list in your ad to avoid any misunderstanding with the buyer.</li>
+    <li>Do not share your financial information except the one required for payment.</li>
+</ul>
+<br>
+<strong style="font-weight: 800">For Buyers:- </strong>
+<ul>
+    <li>Always meet the seller at a safe location and inspect the item before purchasing. Following this one rule will help you avoid most scams. This is also true for house rentals.</li>
+    <li>Watch out for unrealistic offers. If it appears too good to be true, it probably is. Unrealistic offers are used to motivate purchasers to make hasty decisions.</li>
+    <li>The best way to transact is to collect the item and pay at the same time. Never transfer funds or use a debit card to pay someone you do not know before collecting an item.</li>
+    <li>Ask for clear information on condition of the item, price, payment and delivery method.</li>
+    <li>Use only those payment methods that you trust and are familiar with. Never give out your financial information.</li>
+    <li>It is recommended to purchase items directly from the seller.</li>
+    <li>In case of electronic goods, cars, and bikes you should test the functioning of the item before purchase. Verify vehicle chassis number. 3rd party services are available that can provide the history of a vehicle for theft, damage, and for identification purposes.</li>
+    <li>Do your research on comparative prices for the product.</li>
+</ul>
+
+                    </p>
+                </div>
+            </div>
+    
+            <!--Footer
+            <div class="modal-footer justify-content-center">
+                <a type="button" class="btn btn-danger">Get it now <i class="fa fa-diamond ml-1"></i></a>
+                <a type="button" class="btn btn-outline-danger waves-effect" data-dismiss="modal">No, thanks</a>
+            </div>
+        </div>-->
+        <!--/.Content-->
+    </div>
+    </div>
+    <!-- Central Modal For instructions Ends Above-->
+
+
+
+
+
+
+
+
+    <!--Scripts Need to Load After DOM-->
+    <script src="/js/BigPicture.js"></script> 
+    <script src="js/index.js"></script>
+    <script src="/js/offlineadsmodal.js"></script>
+    <script src="/js/changeprofile.js"></script>
+    <script src="/js/updatead.js"></script>
+    <script src="/js/ads.js"></script>
+    <script src="js/bike.js"></script>
+    <script src="/js/login-signup.js"></script>
+
+    <script src="/js/adfromlink.js"></script>
+
+    <script src="/js/search.js"></script>
+    <script src="/js/BikeOffline.js"></script>
+
+
+</body>
+</html>

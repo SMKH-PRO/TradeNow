@@ -1,0 +1,18 @@
+{
+    "short_name": "TNP!",
+    "name": "Trade Now Pakistan",
+    "icons": [
+      
+      {
+        "src": "/logo.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "start_url": "/index.html",
+    "background_color": "#1DA1F2",
+    "display": "standalone",
+    "gcm_sender_id": "103953800507",
+    "theme_color": "#3367D6"
+
+  }

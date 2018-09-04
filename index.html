@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="icon" href="favii.png"  type="image/png">
+
+
+
+<!--Scripts Needed To Load First-->
+<script>var userip;</script>
+    <script type="text/javascript" src="https://l2.io/ip.js?var=userip"></script>
+    
+<script src='/js/jquery.js'></script>
+<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-app.js"></script>
+
+
+
+
+<script>var userip;</script>
+<script type="text/javascript" src="https://l2.io/ip.js?var=userip"></script>
+<script src="/js/bootstrap.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-messaging.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-functions.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+<script src="/js/firebaseintialize.js"></script>
+
+<script src="/js/notifications.js"></script>
+
+<script src="/js/shownotifications.js"></script>
+<script src="/js/userinfo.js"></script>
+
+
+    <script src="/js/localforage.js"></script>
+<!--ScriptsNeeded to Load First Ends Above-->
+
+
+<link rel="manifest" href="/manifest.json">
+
+
+
+
+<!--Some JS AND CSS FILES-->
+<script >
+
+
+
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js').then(function(registration) {
+          // Registration was successful
+          
+          firebase.messaging().useServiceWorker(registration);
+          
+          
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+          
+              function saveMessagingDeviceToken(){
+        
+         firebase.messaging().getToken().then(function(currentToken) {
+        if (currentToken) {
+          console.log('Got FCM device token:', currentToken);
+          // Saving the Device Token to the datastore.
+          firebase.database().ref('/fcmTokens').child(currentToken)
+              .set(firebase.auth().currentUser.uid);
+        } else {
+          // Need to request permissions to show notifications.
+          requestforpermision()
+        }
+      }).catch(function(error){
+        console.error('Unable to get messaging token.', error);
+      });
+        }//Savetoken ends here
+        
+        
+         function requestforpermision(){
+             if(Notification.permission == "default" ){
+            shownotif("Allow Permission For Notfications","We Need Your Permission To Send Notification To This Device Whenever A Buyer Send You Message.! ","warning","5")
+             }
+         firebase.messaging().requestPermission().then(function() {
+        // Notification permission granted.
+        saveMessagingDeviceToken();
+      }).catch(function(error) {
+        console.error('Unable to get permission to notify.', error);
+        
+        
+        shownotif("Permissions Denied!","Your Notifications Are Disabled, You have not granted notifications permission. Please allow notifications otherwise you will not recieve any notification when a buyer sends you offer/message for your product.","warning","5")
+      });
+        
+        }//Req Permisison ends here
+        requestforpermision()
+      } });
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }, function(err) {
+          // registration failed :(
+          console.log('ServiceWorker registration failed: ', err);
+        });
+      });
+    }
+    
+    
+        </script>
+<script src="upload/upload.js"></script>
+<link rel="stylesheet" href="/upload/upload.css">
+
+<link rel='stylesheet ' href='/css/fa.css'>
+<link rel="stylesheet" href="css/index.css">
+           
+
+        
+   
+
+        <!--BOOTSTRAP-->
+        <link rel="stylesheet" href="css/bootstrap.css" >
+<link rel="stylesheet" href="css/mdbs.css">
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="/js/bootstrap.js"></script>
+
+<link rel="stylesheet" href="/css/animate.css">
+<!--Some JS And CSS Files Ends Above-->
+
+
+
+
+
+
+
+    <title>TradeNowPakistan - Home</title>
+</head>
+<body>
+    
+    
+
+
+  
+   <!--NavBar Starts--> 
+   <header>
+<h1  class="animated flipInX text-center bungee header-text"><text class="header-text-1">Trade Now </text> <text class="header-text-2">Pakistan</text></h1>  
+
+<div  id="mynavbar" >
+   <nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color lighten-1">
+        <a class="navbar-brand" href="#"> <img  class="img navbar-logo animated zoomIn" src="logo.png"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-5" aria-controls="navbarSupportedContent-5" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent-5">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link waves-effect waves-light" href="#">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link waves-effect waves-light" href="/publish.html">Publish your ads </a>
+                </li>
+               
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink-5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ads Category
+                    </a>
+                    <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-5">
+                        <a class="dropdown-item waves-effect waves-light" href="laptop.html">Laptops</a>
+                        <a class="dropdown-item waves-effect waves-light" href="mobile.html">Mobiles</a>
+                        <a class="dropdown-item waves-effect waves-light" href="bike.html">Bike</a>
+                        <a class="dropdown-item waves-effect waves-light" href="car.html">Cars</a>
+                        <a class="dropdown-item waves-effect waves-light" href="other.html">Other</a>
+                        <a class="dropdown-item waves-effect waves-light" href="Ads.html">All Ads</a>
+                    </div>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link waves-effect waves-light UserMyOwnAds"  href="">Your Ads </a>
+                </li>
+            </ul>
+
+            <ul id="nav-userdata" data-toggle="collapse" data-target="#navbarDropdownMenuLink" aria-expanded="false" aria-controls="navbarDropdownMenuLink" class="animated lightSpeedIn pointer navbar-nav ml-auto nav-flex-icons">
+              <li id="navbar-name" class="navbar-name animated fadeIn">name</li>
+                <li class="nav-item avatar dropdown">
+                    
+                    <a class="userimgparent nav-link dropdown-toggle waves-effect waves-light"  data-toggle="collapse" href="#navbarDropdownMenuLink" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <img src="defaultuser.png" id="navbaruserimgavatar" class="rounded-circle z-depth-0 navbar-userimg animated flipInX" alt="avatar image">
+                    </a>
+                    <div class="dropdown-menu collapse dropdown-menu-right dropdown-default" id="navbarDropdownMenuLink">
+                        <a class="dropdown-item waves-effect waves-light"  id="changepicbtn" href="#">Change Photo</a>
+                                                <a class="dropdown-item waves-effect waves-light" id="MyWishList"  href="/WishList.html">WishList &nbsp; <i class="wishlist fa fa-heart"></i></a>
+
+                        <a class="dropdown-item waves-effect waves-light" href="/CHAT/">Conversations</a>
+                        <a class="dropdown-item waves-effect waves-light UserMyOwnAds" href="MyAds.html">My Ads</a>
+                        <hr>
+                        <a class="dropdown-item waves-effect waves-light" id="LogOutBtn" href="#">Log Out <i class="fa fa-power-off"></i></a>
+                    </div>
+                </li>
+              
+            </ul>
+            
+        </div>
+    </nav>
+    <i class="fa fa-sign-in loginbtn btn-warning btn" id="loginbtn" onclick= "$('#modalLRForm').modal('show')" aria-hidden="true"></i>
+
+</div>
+</header>
+<div id="spacer" class="spacer"></div>
+<!--NavBar Ends Above-->
+
+
+
+<!--Main BODY STARTS-->
+
+<div class="Amaranth container">
+<div class="text-center"><h1>View Ads:</h1></div>
+
+<!-- Card Laptop-->
+<div class="card category-cards">
+
+        <!-- Card Img -->
+        <div class="view overlay">
+          <img class="card-img-top card-imgs" src="laptop.png" alt="Buy Used & New Laptops - TradeNowPakistan.com">
+          <a>
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+      
+        <!-- Button -->
+        <a  href="/laptop.html" class="btn-floating btn-action ml-auto mr-4 mdb-color lighten-3"><i title="Click To view ads in this category" class="fa fa-chevron-right pl-1"></i></a>
+      
+        <!-- Card content -->
+        <div class="card-body">
+      
+          <!-- Title -->
+          <h4 class="card-title">Laptop Ads</h4>
+          <hr>
+          <!-- Text -->
+          <p class="card-text">New and old condition laptops, <br>View all laptop ads.</p>
+          <p class="adscounter" id="count-laptopads">0 Offline Ads.</p>
+      
+        </div>
+      </div>
+      <!-- Card Laptop Ends-->
+
+ <!-- Card Mobiles-->
+ <div class="card category-cards">
+
+        <!-- Card Img -->
+        <div class="view overlay">
+          <img class="card-img-top card-imgs" src="mobiles.jpg" alt="Buy Used & New Laptops - TradeNowPakistan.com">
+          <a>
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+      
+        <!-- Button -->
+        <a class="btn-floating btn-action ml-auto mr-4 mdb-color lighten-3" href="/mobile.html"><i title="Click To view ads in this category" class="fa fa-chevron-right pl-1"></i></a>
+      
+        <!-- Card content -->
+        <div class="card-body">
+      
+          <!-- Title -->
+          <h4 class="card-title">Mobile Ads</h4>
+          <hr>
+          <!-- Text -->
+          <p class="card-text">Buy new and old condition cars, <br>View all car ads.</p>
+          <p class="adscounter" id="count-mobileads">0 Offline Ads.</p>
+      
+        </div>
+      </div>
+      <!-- Card Mobiles Ends-->
+      <!-- Card Bike-->
+<div class="card category-cards">
+
+        <!-- Card Img -->
+        <div class="view overlay">
+          <img class="card-img-top card-imgs" src="bike.jpg" alt="Buy Used & New Bikes - TradeNowPakistan.com">
+          <a>
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+      
+        <!-- Button -->
+        <a class="btn-floating btn-action ml-auto mr-4 mdb-color lighten-3" href="/bike.html"><i title="Click to view ads in this category" class="fa fa-chevron-right pl-1"></i></a>
+      
+        <!-- Card content -->
+        <div class="card-body">
+      
+          <!-- Title -->
+          <h4 class="card-title">Bike Ads</h4>
+          <hr>
+          <!-- Text -->
+          <p class="card-text">Buy new and old condition MotorCycles, <br>View all Bike ads.</p>
+          <p class="adscounter" id="count-bikeads">0 Offline Ads.</p>
+      
+        </div>
+      </div>
+      <!-- Card Bike Ends-->
+
+      
+
+ <!-- Card Cars-->
+ <div class="card category-cards">
+
+        <!-- Card Img -->
+        <div class="view overlay">
+          <img class="card-img-top card-imgs" src="car.jpg" alt="Buy Used & New Cars - TradeNowPakistan.com">
+          <a>
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+      
+        <!-- Button -->
+        <a class="btn-floating btn-action ml-auto mr-4 mdb-color lighten-3" href="/car.html"><i title="Click To view ads in this category" class="fa fa-chevron-right pl-1"></i></a>
+      
+        <!-- Card content -->
+        <div class="card-body">
+      
+          <!-- Title -->
+          <h4 class="card-title">Car Ads</h4>
+          <hr>
+          <!-- Text -->
+          <p class="card-text">Buy new and old condition cars, <br>View all car ads.</p>
+          <p class="adscounter" id="count-carads">0 Offline Ads.</p>
+      
+        </div>
+      </div>
+      <!-- Card Cars Ends-->
+
+
+
+
+
+
+
+
+
+
+
+<!-- Card Animals-->
+<div class="card category-cards">
+
+        <!-- Card Img -->
+        <div class="view overlay">
+          <img class="card-img-top card-imgs" src="other.jpg" alt="Buy Used & New Products - TradeNowPakistan.com">
+          <a>
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+      
+        <!-- Button -->
+        <a class="btn-floating btn-action ml-auto mr-4 mdb-color lighten-3" href="/other.html"><i title="Click To view ads in this category" class="fa fa-chevron-right pl-1"></i></a>
+      
+        <!-- Card content -->
+        <div class="card-body">
+      
+          <!-- Title -->
+          <h4 class="card-title">Other Ads</h4>
+          <hr>
+          <!-- Text -->
+          <p class="card-text">You can expect any type of product in this category..! </p>
+          <p class="adscounter" id="count-otherads">0 Offline Ads.</p>
+      
+        </div>
+      </div>
+      <!-- Card Animals Ends-->
+
+
+<!-- Card ViewAll -->
+<div class="card card-image mb-3 category-cards" style="background-image: url(allads.jpg);    background-size: cover;
+">
+
+    <!-- Content -->
+    <div class="text-white text-center align-items-center rgba-black-strong py-5 px-4">
+        <div>
+            <h5 class="pink-text"><i class="fa fa-exchange "></i> TradeNowPakistan</h5>
+            <h3 class="card-title pt-2"><strong>View All Ads</strong></h3>
+            <p>No doubts, TradeNowPakistan is the No.1 Free Ads platform where local sellers can post ads and buy or sell new or old products,</p><p> You can view all ads just with your one click.</p>
+            <a class="btn btn-pink" href="/Ads.html"><i class="fa fa-clone left"></i> View Ads</a>
+        </div>
+    </div>
+    <!-- Content -->
+</div>
+<!-- Card ViewALl Ends -->
+
+
+
+</div><!--Container Ends-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--Main Body Ends-->
+
+
+<!-- Footer -->
+<footer class="page-footer font-small unique-color-dark mt-4">
+
+        <div  class="default-color">
+          <div class="container">
+    
+            <!-- Grid row-->
+            <div class="row py-4 d-flex align-items-center">
+    
+              <!-- Grid column -->
+              <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+                <h6 class="mb-0">Get connected with us on social networks!</h6>
+              </div>
+              <!-- Grid column -->
+    
+              <!-- Grid column -->
+              <div class="col-md-6 col-lg-7 text-center text-md-right">
+    
+                <!-- Facebook -->
+                <a class="fb-ic">
+                  <i onclick= "alert('Not Yet Available!')" class="fa fa-facebook white-text mr-4"> </i>
+                </a>
+                <!-- Twitter -->
+                <a class="tw-ic">
+                  <i  onclick= "alert('Not Yet Available!')" class="fa fa-twitter white-text mr-4"> </i>
+                </a>
+                <!-- Google +-->
+                <a class="gplus-ic">
+                  <i onclick= "alert('Not Yet Available!')" class="fa fa-google-plus white-text mr-4"> </i>
+                </a>
+                <!--Linkedin -->
+                <a class="li-ic">
+                  <i onclick= "alert('Not Yet Available!')" class="fa fa-linkedin white-text mr-4"> </i>
+                </a>
+                <!--Instagram-->
+                <a class="ins-ic">
+                  <i  onclick= "alert('Not Yet Available!')" class="fa fa-instagram white-text"> </i>
+                </a>
+    
+              </div>
+              <!-- Grid column -->
+    
+            </div>
+            <!-- Grid row-->
+    
+          </div>
+        </div>
+    
+        <!-- Footer Links -->
+        <div class="container text-center text-md-left mt-5">
+    
+          <!-- Grid row -->
+          <div class="row mt-3">
+    
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+    
+              <!-- Content -->
+              <span class="logo-footer"> <img src="logo.png" class="animated fadeIn img logo-footer-img" alt="TradeNowPakistan.com" >  </span>
+              <hr class="default-color accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 100%;">
+              <p>Pakistan's No.1 Free Trading Platform, Trade Anything Easily Without Any Cost, Post your ads now.....!</p>
+    
+            </div>
+            <!-- Grid column -->
+    
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+    
+              <!-- Links -->
+              <h6 class="text-uppercase font-weight-bold">Quick Links</h6>
+              <hr class="default-color accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+              <p>
+                <a  href="/publish.html">Post Ads Now!</a>
+              </p>
+              <p>
+                <a href="/Ads.html">View Ads</a>
+              </p>
+              <p>
+                <a id="FooterInstructions" href="#!">Read Instructions</a>
+              </p>
+             
+    
+            </div>
+            <!-- Grid column -->
+    
+            <!-- Grid column -->
+            <div class="HideWhenNotLoggedIn col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+    
+              <!-- Links -->
+              <h6 class="text-uppercase font-weight-bold">Your Account</h6>
+              <hr class="default-color accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+              <p>
+                                        <a id="MyWishList"  href="/WishList.html">WishList &nbsp; <i class="wishlist fa fa-heart"></i></a>
+
+              </p>
+              <p>
+                <a class="UserMyOwnAds" href="">Your Advertisements</a>
+              </p>
+              <p>
+                <a href="/CHAT/">Conversations</a>
+              </p>
+             
+    
+            </div>
+            <!-- Grid column -->
+    
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+    
+              <!-- Links -->
+              <h6 class="text-uppercase font-weight-bold">Contact</h6>
+              <hr class="default-color accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+              <p>
+                <i class="fa fa-home mr-3"></i> Bahadurabaad, Saylani</p>
+              <p>
+                <i class="fa fa-envelope mr-3"></i> contact@TradeNowPakistan.com</p>
+              <p>
+                <i class="fa fa-phone mr-3"></i> +44 7520 605710</p>
+              
+    
+            </div>
+            <!-- Grid column -->
+    
+          </div>
+          <!-- Grid row -->
+    
+        </div>
+        <!-- Footer Links -->
+    
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2018 Copyright:
+          <a href="/">TradeNowPakistan.com</a>
+        </div>
+        <!-- Copyright -->
+    
+      </footer>
+      <!-- Footer -->
+
+
+
+
+
+<!-- Modal -->
+<!--Modal: Login / Register Form-->
+<div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog cascading-modal" role="document">
+        <!--Content-->
+        <div class="modal-content">
+
+            <!--Modal cascading tabs-->
+            <div class="modal-c-tabs">
+
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs tabs-2 light-blue darken-3" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab"><i class="fa fa-user mr-1"></i> Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#panel8" role="tab"><i class="fa fa-user-plus mr-1"></i> Register</a>
+                    </li>
+                </ul>
+
+                <!-- Tab panels -->
+                <div class="tab-content">
+                    <!--Panel 7-->
+                    <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
+
+                        <!--Body-->
+                        <div class="modal-body mb-1">
+                            <div class="md-form form-sm mb-5">
+                                <i class="fa fa-envelope prefix"></i>
+                                <input type="email" placeholder="Your Email" id="modalLRInput10" class="form-control form-control-sm validate">
+                                
+                            </div>
+
+                            <div class="md-form form-sm mb-4">
+                                <i class="fa fa-lock prefix"></i>
+                                <input type="password" id="modalLRInput11" placeholder="Your Password" class="form-control form-control-sm validate">
+                                
+                            </div>
+                            <div class="text-center mt-2">
+                                <button id="btn-login" class="btn btn-info">Log in <i class="fa fa-sign-in ml-1"></i></button>
+                            </div>
+                        </div>
+                        <!--Footer-->
+                        <div class="modal-footer">
+                            <div class="options text-center text-md-right mt-1">
+                                
+                               <!-- <p>Forgot <a href="#" class="blue-text">Password?</a></p>-->
+                            </div>
+                            
+                        </div>
+
+                    </div>
+                    <!--/.Panel 7-->
+
+                    <!--Panel 8-->
+                    <div class="tab-pane fade" id="panel8" role="tabpanel">
+
+                        <!--Body-->
+                        <div class="modal-body">
+                            <div class="md-form form-sm mb-5">
+                                <i class="fa fa-user prefix"></i>
+                                <input type="text"   id="name" placeholder="First Name" class="form-control form-control-sm validate">
+                                
+                            </div>
+                            <div class="md-form form-sm mb-5">
+                                <i class="fa fa-envelope prefix"></i>
+                                <input type="email"  placeholder="Your Email" id="modalLRInput12" class="form-control form-control-sm validate">
+                            </div>
+
+                            <div class="md-form form-sm mb-5">
+                                <i class="fa fa-lock prefix"></i>
+                                <input type="password" id="modalLRInput13" placeholder="Your Password" class="form-control form-control-sm validate">
+                                
+                            </div>
+
+                            <div class="md-form form-sm mb-4">
+                                <i class="fa fa-lock prefix"></i>
+                                <input type="password" id="modalLRInput14" placeholder="Repeat Password" class="form-control form-control-sm validate">
+                                
+                            </div>
+
+                            <div class="text-center form-sm mt-2">
+                                <button id="signup-btn" class="btn btn-info">Sign up <i class="fa fa-sign-in ml-1"></i></button>
+                            </div>
+
+                        </div>
+                        <!--Footer-->
+                        <div class="modal-footer">
+                            <div class="options text-right">
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <!--/.Panel 8-->
+                </div>
+
+            </div>
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
+<!--Modal: Login / Register Form-->
+
+<!--Modal 3 Starts Below-->
+<div class="modal fade" id="modalmoreinfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+          <div class="modal-header text-center">
+              <h4 class="modal-title w-100 font-weight-bold">Few More Information Required.</h4>
+              
+          </div>
+          <div class="modal-body mx-3">
+              <div class="md-form mb-5">
+                  <i class="fa fa-user prefix grey-text"></i>
+                  <input type="text" id="UserFirstName"  placeholder="Your First Name" class="form-control validate">
+              </div>
+             
+              <div class="md-form mb-5">
+                <i class="fa fa-user prefix grey-text"></i>
+                <input type="text" id="UserLastName"  placeholder="Your Last Name" class="form-control validate">
+            </div>
+
+
+              <p class="text-danger">Make sure to fill correct information, The name cannot be changed later.</p>
+          </div>
+          
+          <div class="modal-footer d-flex justify-content-center">
+              <button id="senddetails-btn" class="btn btn-unique">Submit <i class="fa fa-paper-plane-o ml-1"></i></button>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+<!--Modal 3 Ends Here-->
+
+<!--1 Modal ends above-->
+
+    <!--Login Modal Ends-->
+
+
+    <!-- Central Modal for profile update -->
+<div class="modal fade" id="picprofile" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-notify modal-success" role="document">
+      <!--Content-->
+      <div class="modal-content">
+          <!--Header-->
+          <div class="modal-header">
+              <p class="heading lead">UPDATE PROFILE PICTURE</p>
+  
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  
+              </button>
+          </div>
+  
+          <!--Body-->
+          <div class="modal-body">
+              
+              
+<!--File Uplaod belo-->
+<center>
+
+<div class="text-center"><br><br><br>
+
+  <p style="font-size:10px" class="text-muted">Profile Update Requires Reload,It means this page will be reloaded after uploading the profile picture.</p>
+        
+              
+              
+              <div style="cursor:pointer !important"  class="dropzone">
+                  <div style="cursor:pointer !important" class="content">
+                      <figure class="upload" id="uploadimgtwo"><img src="upload/upload.svg" >  <figcaption style="z-index: 999; color: black;margin:3px;">Browse Or Drop</figcaption></figure>
+                      <span class="filename the2ndfilename"></span>
+                      <form id="lolinputtwo"><input style="cursor:pointer !important" id="uploadfilestwo"  type="file" class="input"></form>
+                  
+                  </div>
+                  
+              </div>
+          <input type="text" class="uploadtext animated fadeIn"  id="percentagetexttwo" value="0%"  disabled="disabled">
+              <progress class="uploadstatus animated fadeIn" id="uploadertwo" value="0" max="100"></progress>
+              
+              <img src="upload/syncing.svg" class="syncing">
+              <img src="upload/checkmark.svg" class="done">
+              
+          </div>
+        
+     
+      </center><br><br><br>
+          <!--Footer-->
+          <div class="modal-footer justify-content-center">
+              
+              <a type="button" id="uploadboxclosetwo" class="btn btn-outline-danger waves-effect" data-dismiss="modal">Cancel</a>
+          </div>
+      </div>
+      <!--/.Content-->
+  </div>
+  </div>
+  </div>
+  <!-- Central Modal for change profile pic endsabove-->
+
+
+
+
+
+
+
+
+
+<!--Modal Instructions-->
+<!-- Central Modal For Instructions Starts Below -->
+<div class="modal fade" id="InstructionsForUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-notify modal-lg modal-danger" role="document">
+        <!--Content-->
+        <div class="modal-content ">
+            <!--Header-->
+            <div class="modal-header">
+                <p class="heading lead">Instructions For Users <i class="fa fa-exclamation"></i></p>
+    
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class="white-text">&times;</span>
+                </button>
+            </div>
+    
+            <!--Body-->
+            <div class="modal-body">
+                <div >
+                 
+                     <p class="text-center" style="font-weight: 700" >  There is no definite way to identify a fraudulent seller or buyer.<br>
+                    We urge you to practice good judgement and keep the following instructions in mind
+
+</p> 
+
+                    <p class="text-left">
+<strong style="font-weight: 800">For Sellers:- </strong>
+<ul>
+    <li>Try to take the full payment at the time of the delivery. Remember to use a safe location to meet.</li>
+    <li>Watch out for fake currency and money orders. Be aware that banks will not honour fake currency/money order and will hold you responsible for it.</li>
+    <li>Verify the buyer’s credentials if there is a request for a bulk order. Ask the buyer to provide photo ID and proof of address.</li>
+    <li>Ensure that your product meets the features you list in your ad to avoid any misunderstanding with the buyer.</li>
+    <li>Do not share your financial information except the one required for payment.</li>
+</ul>
+<br>
+<strong style="font-weight: 800">For Buyers:- </strong>
+<ul>
+    <li>Always meet the seller at a safe location and inspect the item before purchasing. Following this one rule will help you avoid most scams. This is also true for house rentals.</li>
+    <li>Watch out for unrealistic offers. If it appears too good to be true, it probably is. Unrealistic offers are used to motivate purchasers to make hasty decisions.</li>
+    <li>The best way to transact is to collect the item and pay at the same time. Never transfer funds or use a debit card to pay someone you do not know before collecting an item.</li>
+    <li>Ask for clear information on condition of the item, price, payment and delivery method.</li>
+    <li>Use only those payment methods that you trust and are familiar with. Never give out your financial information.</li>
+    <li>It is recommended to purchase items directly from the seller.</li>
+    <li>In case of electronic goods, cars, and bikes you should test the functioning of the item before purchase. Verify vehicle chassis number. 3rd party services are available that can provide the history of a vehicle for theft, damage, and for identification purposes.</li>
+    <li>Do your research on comparative prices for the product.</li>
+</ul>
+
+                    </p>
+                </div>
+            </div>
+    
+            <!--Footer
+            <div class="modal-footer justify-content-center">
+                <a type="button" class="btn btn-danger">Get it now <i class="fa fa-diamond ml-1"></i></a>
+                <a type="button" class="btn btn-outline-danger waves-effect" data-dismiss="modal">No, thanks</a>
+            </div>
+        </div>-->
+        <!--/.Content-->
+    </div>
+    </div>
+    <!-- Central Modal For instructions Ends Above-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--Scripts Need to Load After DOM-->
+    <script src="/js/BigPicture.js"></script> 
+    <script src="/js/index.js"></script>
+    <script src="/js/changeprofile.js"></script>
+    <script src="/js/login-signup.js"></script>
+    <script src="/js/home.js"></script>
+</body>
+</html>
